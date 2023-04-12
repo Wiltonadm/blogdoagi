@@ -4,13 +4,13 @@
 
 Projeto de exemplo utilizando Cucumber, Java 11 e JUnit para realização de testes automatizados de software.
 
-##Pré-requisitos
+## Pré-requisitos
 
 - Java 11 ou superior instalado
 - Gerenciador de dependências (ex: Maven)
 
 
-##Instalação
+## Instalação
 
 - Faça o clone deste repositório.
 
@@ -18,13 +18,13 @@ Projeto de exemplo utilizando Cucumber, Java 11 e JUnit para realização de tes
 
 - Execute o comando mvn clean install para instalar as dependências e compilar o projeto.
 
-##Como rodar os testes
+## Como rodar os testes
 
 - Abra o terminal na pasta do projeto.
 
 - Execute o comando mvn test para rodar os testes.
 
-##Estrutura do projeto
+## Estrutura do projeto
 
 O projeto está dividido em pacotes, conforme a seguir:
 
@@ -36,7 +36,7 @@ O projeto está dividido em pacotes, conforme a seguir:
 
 **resources**: Contém arquivos de recursos, como o arquivo com as configurações do WebDriver.
 
-##Referências
+## Referências
 
 *Cucumber*
 
