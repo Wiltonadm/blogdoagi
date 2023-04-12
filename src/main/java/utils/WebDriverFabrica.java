@@ -5,26 +5,30 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class WebDriverFabrica {
+//    Instaciar o chormedriver para conseguir acessar o navegador
 
     public static WebDriver driver;
-    private WebDriverFabrica(){
 
+    public  WebDriverFabrica () {
     }
+
     public static WebDriver criarChormeDrive(){
         if(driver == null){
             System.setProperty("webdriver.chrome.driver", "src/main/java/drivers/chromedriver.exe");
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--start-maximized");
+            options.addArguments("--no-default-browser-check");
+            options.addArguments("--disable-default-apps");
 
             driver = new ChromeDriver(options);
 
         }
         return driver;
     }
-    public static WebDriver fecharDriver() {
+    public static void fecharDriver() {
         if (driver != null) {
             driver.quit();
+            driver = null;
         }
-        return driver = null;
     }
 }

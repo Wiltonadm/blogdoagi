@@ -1,14 +1,16 @@
 package steps;
 
 import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import pages.PaginaInicial;
 import utils.Elemento;
+import utils.Screenshot;
 import utils.WebDriverFabrica;
+
 
 public class ValidarPesquisarInformacao {
     PaginaInicial paginaInicial = new PaginaInicial();
@@ -27,19 +29,22 @@ public class ValidarPesquisarInformacao {
     @Quando("Na barra de pesquisa informar: {string}")
     public void naBarraDePesquisaInformar(String InformacaoBuscada) {
         elemento.digitar(By.className("search-field"), InformacaoBuscada);
-//        Falta colocar um E aqui para clicar no botao pesquisar
+    }
+    @Quando("clicar no botão pesquisar")
+        public void clicarNoBotaoPesquisar() {
         elemento.clicar(By.className("search-submit"));
-
-
     }
     @Então("na tela de resultado da pequisa devera retornar a mensagem: {string}")
     public void naTelaDeResultadoDaPequisaDeveraRetornarAMensagem(String mensagemRetornada) {
         Assert.assertEquals(mensagemRetornada, elemento.ExtrairTexto(By.className("entry-header")));
-        System.out.println("Deu certo");
 
     }
-    @Então("fechar o navegador")
-    public void fecharONavegador() {
-        WebDriver driver = WebDriverFabrica.fecharDriver();
+    @Entao("gravar evidencia")
+    public void gravarEvidencia() {
+        Screenshot.tirarScreenshot(WebDriverFabrica.driver, "ValidarPesquisarInformacao");
+    }
+    @Entao("fechar navegador")
+    public void fecharNavegador() {
+        WebDriverFabrica.fecharDriver();
     }
 }

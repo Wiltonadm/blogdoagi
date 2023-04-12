@@ -6,6 +6,7 @@ import utils.WebDriverFabrica;
 
 public class PaginaInicial {
 
+//    Acessar a paginal inicial do blog
     WebDriver driver = WebDriverFabrica.criarChormeDrive();
 
     public void abrirNavegadorPaginalIncialBlog(){

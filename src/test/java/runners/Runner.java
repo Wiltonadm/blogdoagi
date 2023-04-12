@@ -6,11 +6,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+//      para rodar os teste do cucumber junto com junit
         plugin = {
             "pretty",
             "html:target/reports/cucumber.json"
         },
-        tags = "@ValidarPesquisarInformacao",
+        tags = "@BlogDoAgi",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         monochrome = false,
         stepNotifications = true,
